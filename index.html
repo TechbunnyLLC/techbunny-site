@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TechBunny.ai, We build your software, start to shipped</title>
+<meta name="description" content="TechBunny is a senior US-led product and software engineering studio. We scope, architect, build, and ship custom software, MVPs, AI apps, and web & mobile platforms, and we own the outcome." />
+<meta property="og:title" content="TechBunny.ai, Product & software engineering studio" />
+<meta property="og:description" content="Senior US-led product and engineering. We build the thing: strategy, architecture, and shipped software." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://techbunny.ai/" />
+<meta name="theme-color" content="#B6FCFC" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --aqua:#B6FCFC; --aqua-soft:#DCFEFE; --aqua-2:#9BF3F3;
+  --deep:#0A8E9B; --teal-ink:#06545C;
+  --ink:#0B1722; --ink-soft:#42535F; --line:#D6EEEE;
+  --amber:#FF8A2B; --amber-deep:#F0700F;
+  --white:#fff; --paper:#F2FBFB;
+  --display:"Bricolage Grotesque",-apple-system,sans-serif;
+  --body:"Hanken Grotesk",-apple-system,sans-serif;
+  --maxw:1120px; --r:22px;
+  --shadow:0 18px 50px -22px rgba(6,84,92,.45);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--body);color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,.disp{font-family:var(--display);line-height:1.04;letter-spacing:-.02em;font-weight:800}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{font-weight:700;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--deep)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--display);font-weight:700;font-size:1rem;padding:.85rem 1.5rem;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,background .18s}
+.btn-amber{background:var(--amber);color:#1a0d00;box-shadow:0 10px 24px -10px rgba(240,112,15,.7)}
+.btn-amber:hover{transform:translateY(-3px);background:var(--amber-deep)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-ghost:hover{transform:translateY(-3px);background:var(--ink);color:var(--white)}
+
+/* NAV */
+header{position:sticky;top:0;z-index:50;transition:.25s}
+header.scrolled{background:rgba(220,254,254,.85);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:.6rem;font-family:var(--display);font-weight:800;font-size:1.28rem}
+.brand .dot{color:var(--amber)}
+.brand img{height:42px;width:auto;filter:drop-shadow(0 3px 6px rgba(6,84,92,.25))}
+.navlinks{display:flex;gap:1.6rem;align-items:center}
+.navlinks a{font-weight:600;font-size:.96rem;color:var(--ink-soft);transition:color .15s}
+.navlinks a:hover{color:var(--ink)}
+.menu-btn{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+.menu-btn span{width:24px;height:2.5px;background:var(--ink);border-radius:2px;transition:.25s}
+
+/* HERO */
+.hero{position:relative;background:linear-gradient(170deg,var(--aqua) 0%,var(--aqua-soft) 55%,#fff 100%);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(6,84,92,.10) 1px,transparent 0);background-size:26px 26px;opacity:.5;mask-image:linear-gradient(to bottom,#000,transparent 80%)}
+.blob{position:absolute;border-radius:50%;filter:blur(50px);opacity:.55;z-index:0}
+.blob.a{width:420px;height:420px;background:#7df0f0;top:-120px;right:-80px}
+.blob.b{width:300px;height:300px;background:#fff;bottom:-90px;left:-60px;opacity:.7}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center;padding:64px 0 84px}
+.hero h1{font-size:clamp(2.5rem,5.4vw,4.3rem);margin:.6rem 0 1rem}
+.hero h1 .hl{color:var(--deep);position:relative;white-space:nowrap}
+.hero p.lead{font-size:1.18rem;color:var(--ink-soft);max-width:34ch;margin-bottom:1.7rem}
+.cta-row{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:2rem}
+.chips{display:flex;gap:.55rem;flex-wrap:wrap}
+.chip{background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:999px;padding:.4rem .9rem;font-weight:700;font-size:.85rem;color:var(--teal-ink)}
+.chip b{color:var(--amber-deep)}
+.hero-art{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.hero-art .halo{position:absolute;width:90%;aspect-ratio:1;background:radial-gradient(circle,#fff 0%,rgba(255,255,255,0) 68%);top:46%;left:50%;transform:translate(-50%,-50%)}
+.hero-art img{position:relative;width:min(500px,95%);height:auto;border-radius:18px;box-shadow:0 24px 54px -20px rgba(6,84,92,.5)}
+.tagline{position:relative;font-family:var(--display);font-weight:700;color:var(--deep);font-size:1.05rem;letter-spacing:.01em;margin-top:.4rem}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+/* STAT BAND */
+.stats{background:var(--ink);color:var(--white)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:48px 24px}
+.stat .n{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4vw,2.9rem);color:var(--aqua);line-height:1}
+.stat .n span{color:var(--amber)}
+.stat .l{color:#9fb4bd;font-weight:600;margin-top:.4rem;font-size:.95rem}
+
+/* SECTIONS */
+section{padding:88px 0}
+.sec-head{max-width:30ch;margin-bottom:46px}
+.sec-head.center{margin:0 auto 50px;text-align:center}
+.sec-head h2{font-size:clamp(2rem,4vw,3rem);margin:.5rem 0 .8rem}
+.sec-head p{color:var(--ink-soft);font-size:1.1rem}
+.paper{background:var(--paper)}
+
+/* PROBLEM */
+.answer{font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,3.2vw,2.3rem);line-height:1.22;max-width:20ch}
+.answer .x{color:var(--ink-soft);font-weight:600;font-size:1.05rem;font-family:var(--body);display:block;margin-top:1.3rem;max-width:52ch;line-height:1.6}
+.answer .pop{color:var(--deep)}
+
+/* CARD GRIDS */
+.grid{display:grid;gap:22px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:30px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--aqua-2)}
+.card .ic{width:46px;height:46px;border-radius:13px;background:var(--aqua);display:grid;place-items:center;margin-bottom:16px}
+.card .ic svg{width:24px;height:24px;stroke:var(--teal-ink);fill:none;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:1.22rem;margin-bottom:.5rem}
+.card p{color:var(--ink-soft);font-size:.98rem}
+.num-card .step{font-family:var(--display);font-weight:800;color:var(--aqua-2);font-size:2.4rem;line-height:1}
+
+/* TECH */
+.tech{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center;margin-top:36px}
+.tech span{font-family:var(--display);font-weight:700;color:var(--teal-ink);background:var(--aqua);padding:.55rem 1.1rem;border-radius:12px;font-size:.95rem}
+
+/* WORK */
+.work-card{position:relative;overflow:hidden}
+.work-card .tag{display:inline-block;font-weight:700;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;color:var(--amber-deep);margin-bottom:.5rem}
+.work-card .url{font-family:var(--display);font-weight:800;font-size:1.3rem}
+.work-card p{color:var(--ink-soft);margin-top:.3rem}
+
+/* TEAM */
+.team-card{display:flex;flex-direction:column}
+.team-card .role{color:var(--deep);font-weight:700;font-size:.92rem;margin-bottom:.7rem}
+.team-card h3{font-size:1.4rem;margin-bottom:.2rem}
+.team-card p{font-size:.98rem;color:var(--ink-soft)}
+.pedigree{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:14px}
+.pedigree span{font-size:.74rem;font-weight:700;color:var(--teal-ink);border:1px solid var(--line);border-radius:8px;padding:.25rem .55rem}
+.feature{border:2px solid var(--aqua-2);background:linear-gradient(180deg,var(--aqua-soft),#fff)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.about-grid p{color:var(--ink-soft);font-size:1.06rem;margin-bottom:1rem}
+.about-grid .lede{font-family:var(--display);font-weight:700;font-size:1.5rem;color:var(--ink);line-height:1.25;margin-bottom:1.2rem}
+
+/* FAQ */
+.faq{max-width:780px;margin:0 auto}
+.q{border-bottom:1px solid var(--line)}
+.q button{width:100%;text-align:left;background:none;border:0;padding:22px 0;font-family:var(--display);font-weight:700;font-size:1.15rem;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+.q button .pm{color:var(--amber);font-size:1.6rem;line-height:1;transition:transform .25s}
+.q[aria-open="true"] .pm{transform:rotate(45deg)}
+.q .ans{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.q .ans p{color:var(--ink-soft);padding-bottom:22px;font-size:1.02rem}
+
+/* CONTACT */
+.contact{background:var(--ink);color:var(--white)}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contact h2{font-size:clamp(2rem,4vw,2.8rem);color:#fff}
+.contact .sub{color:#9fb4bd;margin:1rem 0 1.6rem;font-size:1.08rem}
+.info a{color:var(--aqua);font-weight:700}
+.info div{margin-bottom:.7rem;color:#cfe0e4}
+.form label{display:block;font-weight:600;font-size:.88rem;margin:0 0 .35rem;color:#cfe0e4}
+.form input,.form textarea{width:100%;padding:.8rem 1rem;border-radius:12px;border:1px solid #29404c;background:#0f2330;color:#fff;font-family:var(--body);font-size:1rem;margin-bottom:1rem}
+.form input:focus,.form textarea:focus{outline:2px solid var(--aqua);border-color:transparent}
+.note{font-size:.82rem;color:#7c929b;margin-top:.4rem}
+
+/* FOOTER */
+footer{background:#071019;color:#8aa0a8;padding:42px 0}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer .brand{color:#fff;font-size:1.1rem}
+footer a{color:#8aa0a8}footer a:hover{color:var(--aqua)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:880px){
+  .hero-grid{grid-template-columns:1fr;text-align:center;padding:40px 0 60px}
+  .hero p.lead{margin-left:auto;margin-right:auto}.cta-row,.chips{justify-content:center}
+  .hero-art{order:-1}.hero-art img{width:min(380px,92%)}
+  .stats .wrap{grid-template-columns:repeat(2,1fr)}
+  .g3,.g2,.about-grid,.contact .wrap{grid-template-columns:1fr}
+  .navlinks{position:fixed;inset:74px 0 auto 0;background:var(--aqua-soft);flex-direction:column;padding:24px;gap:1.1rem;transform:translateY(-130%);transition:.3s;box-shadow:var(--shadow)}
+  .navlinks.open{transform:none}
+  .menu-btn{display:flex}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.logo-wrap{height:64px;display:flex;align-items:center;margin-bottom:14px}.logo-wrap img{max-height:60px;max-width:190px;width:auto;border-radius:8px}
+.logo-link{display:inline-flex;cursor:pointer;transition:opacity .15s,transform .15s}.logo-link:hover{opacity:.82;transform:translateY(-2px)}
+.work-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:22px}.work-grid>.card{flex:1 1 300px;max-width:345px}
+</style>
+</head>
+<body>
+<header id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><img src="assets/logo-mark.png" alt="TechBunny.ai logo"/>TechBunny<span class="dot">.ai</span></a>
+    <nav class="navlinks" id="nav">
+      <a href="#build">What we build</a>
+      <a href="#ai">AI</a>
+      <a href="#how">How we work</a>
+      <a href="#work">Work</a>
+      <a href="#team">Team</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="btn btn-amber" style="padding:.55rem 1.1rem">Start a project</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home" style="padding:0">
+  <div class="blob a"></div><div class="blob b"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow reveal">Silicon Valley architecture. Bunny-fast execution.</span>
+      <h1 class="reveal" style="transition-delay:.05s">We don't rent you developers. <span class="hl">We build the thing.</span></h1>
+      <p class="lead reveal" style="transition-delay:.1s">Senior, US-led product and engineering. We scope it, architect it, build it, and ship it. We own the outcome, not just the hours.</p>
+      <div class="cta-row reveal" style="transition-delay:.15s">
+        <a href="#contact" class="btn btn-amber">Start a project →</a>
+        <a href="#work" class="btn btn-ghost">See our work</a>
+      </div>
+      <div class="chips reveal" style="transition-delay:.2s">
+        <span class="chip"><b>20 yrs</b> building together</span>
+        <span class="chip"><b>3M+</b> users built for</span>
+        <span class="chip"><b>100+</b> countries served</span>
+        <span class="chip"><b>$13M+</b> raised &amp; scaled</span>
+        <span class="chip"><b>Inc. 500</b> #89 fastest-growing</span>
+      </div>
+    </div>
+    <div class="hero-art reveal" style="transition-delay:.1s">
+      <img src="assets/techbunny-scale.gif" alt="Bunnies hopping and multiplying, showing how TechBunny scales"/>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats"><div class="wrap">
+  <div class="stat reveal"><div class="n">2006</div><div class="l">Founders building together since</div></div>
+  <div class="stat reveal" style="transition-delay:.05s"><div class="n">3M<span>+</span></div><div class="l">Athletes on a platform we built</div></div>
+  <div class="stat reveal" style="transition-delay:.1s"><div class="n">100<span>+</span></div><div class="l">Countries served</div></div>
+  <div class="stat reveal" style="transition-delay:.15s"><div class="n">$13M<span>+</span></div><div class="l">Capital raised &amp; deployed</div></div>
+</div></div>
+
+<!-- PROBLEM / ANSWER -->
+<section>
+  <div class="wrap g2 grid" style="align-items:center">
+    <div class="reveal">
+      <span class="eyebrow">The gap</span>
+      <h2 class="answer" style="margin-top:.6rem">Most software stalls between <span class="pop">idea</span> and <span class="pop">shipped.</span></h2>
+    </div>
+    <div class="reveal" style="transition-delay:.1s">
+      <p style="font-size:1.12rem;color:var(--ink-soft)">Agencies are slow and expensive. Freelancers vanish and don't own outcomes. Hourly offshore gives you code, not a product.</p>
+      <p style="font-size:1.12rem;color:var(--ink);font-weight:600;margin-top:1rem">TechBunny closes the gap: senior US product and engineering leadership that takes you from a vision to working, scalable software. We stay accountable from the first call to launch and beyond.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE BUILD -->
+<section class="paper" id="build">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">What we build</span>
+      <h2>Full products, not piecework.</h2>
+      <p>Bring an idea, a backlog, or a half-built product. We deliver the whole solution.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h12"/></svg></div><h3>Custom software</h3><p>Web and internal platforms built to your business, architected to last.</p></div>
+      <div class="card reveal" style="transition-delay:.05s"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg></div><h3>MVPs &amp; product launches</h3><p>From zero to a shippable v1 fast, without the shortcuts that sink you later.</p></div>
+      <div class="card reveal" style="transition-delay:.1s"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div><h3>AI &amp; ML</h3><p>Media recognition, conversational AI, generative AI, and AI agents that ship and earn their keep.</p></div>
+      <div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div><h3>Web &amp; mobile</h3><p>Cross-platform apps in Flutter, one codebase from iOS to Android to web.</p></div>
+      <div class="card reveal" style="transition-delay:.05s"><div class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20"/></svg></div><h3>Payments &amp; commerce</h3><p>Stripe-powered billing, subscriptions, and marketplaces that just work.</p></div>
+      <div class="card reveal" style="transition-delay:.1s"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 17a4 4 0 0 1 0-8 5 5 0 0 1 9.6-2A4.5 4.5 0 0 1 19 17z"/></svg></div><h3>Cloud &amp; scale</h3><p>AWS and AWS IoT architecture designed to handle real traffic from day one.</p></div><div class="card reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="M12 7v10M7 9.5v5M17 9.5v5"/></svg></div><h3>Blockchain &amp; crypto</h3><p>Smart contracts, wallets, and crypto integrations built to production standards.</p></div><div class="card reveal" style="transition-delay:.05s"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h12"/></svg></div><h3>Customer data &amp; commerce</h3><p>Shopify, CDPs, and authentication that capture richer, more actionable customer data.</p></div>
+    </div>
+    <div class="tech reveal">
+      <span>AWS</span><span>AWS IoT</span><span>Flutter</span><span>React Native</span><span>Stripe</span><span>Shopify</span><span>Blockchain</span><span>AI / ML</span>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section id="ai">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">AI in production</span>
+      <h2>A demo is easy. Production is the job.</h2>
+      <p>Most AI never gets past the pilot. We design, build, and ship AI that works inside your real workflows and keeps working after launch.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card reveal"><h3>AI product development</h3><p>We take an AI pilot to a real release, with workflow design, evaluations, data integration, and delivery discipline.</p></div>
+      <div class="card reveal" style="transition-delay:.05s"><h3>Agentic development</h3><p>Multi-agent workflows, evaluation loops, and review steps built into your product and engineering, not bolted on.</p></div>
+      <div class="card reveal" style="transition-delay:.1s"><h3>Data &amp; analytics products</h3><p>Governed data platforms and internal AI tools that stay grounded in your real business data.</p></div>
+      <div class="card reveal" style="transition-delay:.15s"><h3>Cloud &amp; AI infrastructure</h3><p>Modernized cloud, data, and AI infrastructure built for production reliability and sane costs.</p></div>
+    </div>
+    <div class="sec-head center reveal" style="margin:48px auto 22px;max-width:42ch"><h3 style="font-size:1.45rem">Before anything ships, we put this in place</h3></div>
+    <div class="grid g2">
+      <div class="card reveal"><p><strong>Workflow map first.</strong> Decisions, data paths, approval points, and failure modes are explicit before we pick a model.</p></div>
+      <div class="card reveal" style="transition-delay:.05s"><p><strong>Evals and acceptance checks.</strong> The first release ships with real quality signals, not demo confidence.</p></div>
+      <div class="card reveal" style="transition-delay:.1s"><p><strong>Guardrails and rollback.</strong> Permissions, logging, human review, and fallback behavior are part of launch scope.</p></div>
+      <div class="card reveal" style="transition-delay:.15s"><p><strong>Metrics after launch.</strong> Adoption, reliability, latency, cost, and value stay visible once it is live.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:38px" class="reveal"><a href="#contact" class="btn btn-amber">Scope your AI build &rarr;</a></div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">How we work</span>
+      <h2>Senior leadership, end to end.</h2>
+      <p>The people who scope your project are the people accountable for shipping it.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card num-card reveal"><div class="step">01</div><h3 style="margin-top:.6rem">Scope &amp; architect</h3><p>We turn your vision into a clear plan and a sound architecture before a line of code goes in.</p></div>
+      <div class="card num-card reveal" style="transition-delay:.07s"><div class="step">02</div><h3 style="margin-top:.6rem">Build with seniors</h3><p>A senior team builds it, guided by leaders who've shipped products at real scale.</p></div>
+      <div class="card num-card reveal" style="transition-delay:.14s"><div class="step">03</div><h3 style="margin-top:.6rem">Ship &amp; scale</h3><p>We launch, harden, and grow it, engineered to scale instead of buckle.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="paper" id="work">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Selected work</span>
+      <h2>Platforms we're building now.</h2>
+    </div>
+    <div class="work-grid">
+      <div class="card work-card reveal"><a class="logo-link" href="https://cointheaters.com" target="_blank" rel="noopener"><div class="logo-wrap"><img src="assets/coin.jpg" alt="Coin Theaters"/></div></a><span class="tag">Crowdfunding · Streaming · Social</span><p>A next-generation platform fusing crowdfunding, streaming, and social engagement that connects creators directly with their audiences. Full website and platform built by TechBunny.</p></div><div class="card work-card reveal"><a class="logo-link" href="https://photo-op.ai" target="_blank" rel="noopener"><div class="logo-wrap"><img src="assets/photo-op.png" alt="photo-op.ai"/></div></a><span class="tag">AI · Media</span><p>Building their AI media and user-generated-content licensing platform.</p></div>
+      <div class="card work-card reveal" style="transition-delay:.05s"><a class="logo-link" href="https://entertainmentoctopus.com" target="_blank" rel="noopener"><div class="logo-wrap"><img src="assets/eo.jpg" alt="Entertainment Octopus"/></div></a><span class="tag">Film · Props · Platform</span><p>Building the platform and apps for their prop and film rental company.</p></div>
+      <div class="card work-card reveal" style="transition-delay:.1s"><a class="logo-link" href="https://aromatech.com" target="_blank" rel="noopener"><div class="logo-wrap"><img src="assets/aromatech.jpg" alt="AromaTech"/></div></a><span class="tag">Product · Apps</span><p>Building their product platform and mobile apps.</p></div>
+      <div class="card work-card reveal" style="transition-delay:.15s"><a class="logo-link" href="https://hireons.com" target="_blank" rel="noopener"><div class="logo-wrap"><img src="assets/hireons.png" alt="HireonsAI"/></div></a><span class="tag">AI · Hiring</span><p>Building their AI-powered hiring and interview platform.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">The team</span>
+      <h2>Operators who've built and scaled before.</h2>
+      <p>Silicon Valley originals. Between us we helped build the Netscape browser, architected MySpace Music, scaled a platform to millions of users, and brought in partners trained at Yale and Harvard.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card team-card reveal">
+        <div class="role">Co-Founder &amp; CEO</div><h3>Todd Johnson</h3>
+        <p>The business engine, and an Inc. 500 winner who built the 89th fastest-growing company in America. Co-founded and scaled rSportz, leading the acquisition and $13M+ in funding that grew it to 3M+ athletes across 100+ countries before its 2020 exit. Owns strategy, growth, and client relationships.</p>
+      </div>
+      <div class="card team-card reveal" style="transition-delay:.06s">
+        <div class="role">Co-Founder &amp; CTO</div><h3>Greg Argyle</h3>
+        <p>A Silicon Valley original who helped build the Netscape browser. Founded rSportz in 2006 and served as CTO through 2021, architecting a platform that handled registration, scheduling, and payments for millions. Owns TechBunny's technical strategy and delivery.</p>
+      </div>
+      <div class="card team-card feature reveal" style="transition-delay:.12s">
+        <div class="role">Director of Architecture &amp; Engineering</div><h3>Chak Nanga</h3>
+        <p>Helped build the Netscape browser and architected MySpace Music. Enterprise-grade engineering leadership across scalable architecture, distributed systems, and data pipelines built for real traffic.</p>
+        <div class="pedigree"><span>Salesforce</span><span>ThirdLove</span><span>Ellie Mae</span><span>IGT</span><span>Pearson</span><span>AOL</span><span>Netscape</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="paper" id="about">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <span class="eyebrow">Our story</span>
+      <p class="lede" style="margin-top:.6rem">We've done this together for 20 years, and we built something that scaled.</p>
+      <p>In 2006, Greg started rSportz and brought Todd in at inception to raise capital, acquire the software platform that became its core, and scale the company.</p>
+      <p>That acquisition secured the lead investor who backed rSportz with more than $13M. Over the next decade-plus, the platform grew to serve over 3 million athletes across 100+ countries before its 2020 exit, with Greg as CTO through 2021.</p>
+      <p>TechBunny is what comes next: that same build-and-scale partnership, now pointed at other founders' products, with Chak Nanga's enterprise engineering leadership behind every build.</p>
+    </div>
+    <div class="reveal" style="transition-delay:.1s">
+      <div class="card" style="background:var(--white)">
+        <div class="grid g2" style="gap:18px">
+          <div><div class="num-card"><span class="step" style="font-size:1.9rem">20yrs</span></div><p style="color:var(--ink-soft);margin-top:.3rem">Partnership</p></div>
+          <div><div class="num-card"><span class="step" style="font-size:1.9rem">3M+</span></div><p style="color:var(--ink-soft);margin-top:.3rem">Users built for</p></div>
+          <div><div class="num-card"><span class="step" style="font-size:1.9rem">100+</span></div><p style="color:var(--ink-soft);margin-top:.3rem">Countries</p></div>
+          <div><div class="num-card"><span class="step" style="font-size:1.9rem">$13M+</span></div><p style="color:var(--ink-soft);margin-top:.3rem">Raised &amp; scaled</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head center reveal"><span class="eyebrow">FAQ</span><h2>Questions, answered.</h2></div>
+    <div class="faq">
+      <div class="q reveal"><button aria-expanded="false">What does TechBunny build?<span class="pm">+</span></button><div class="ans"><p>Custom software, MVPs and product launches, AI/ML applications, web and mobile apps (Flutter), payments and commerce (Stripe), and cloud architecture on AWS. Full products, scoped and shipped.</p></div></div>
+      <div class="q reveal"><button aria-expanded="false">How are you different from an agency or freelancers?<span class="pm">+</span></button><div class="ans"><p>We own the outcome. Senior, US-based product and engineering leadership scopes, architects, and ships the work, and stays accountable. You get a partner that delivers a product, not a vendor that bills hours or a freelancer who disappears.</p></div></div>
+      <div class="q reveal"><button aria-expanded="false">Who's on the team?<span class="pm">+</span></button><div class="ans"><p>Co-founders Todd Johnson (CEO) and Greg Argyle (CTO), who built and scaled rSportz over 20 years, and Director of Architecture &amp; Engineering Chak Nanga, whose background spans Salesforce, ThirdLove, and Ellie Mae. Greg and Chak are Silicon Valley originals who helped build the Netscape browser, Chak architected MySpace Music, and our partners trained at Yale and Harvard.</p></div></div>
+      <div class="q reveal"><button aria-expanded="false">What does it cost compared to a US agency?<span class="pm">+</span></button><div class="ans"><p>Less. We deliver senior, US-led product work at a fraction of typical US-agency cost by building lean and running an efficient global delivery model, without giving up the leadership and accountability you'd expect from a top US team.</p></div></div>
+      <div class="q reveal"><button aria-expanded="false">How do you keep quality high?<span class="pm">+</span></button><div class="ans"><p>Architecture first, senior oversight throughout. Every build is shaped by people who've shipped products to millions of users, so quality and scalability are designed in, not bolted on.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="work-with-us">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Working with us</span>
+      <h2>The easy part is working with us.</h2>
+      <p>You work directly with the US-based product and engineering leaders who own your build. Same time zone, plain English, one accountable team. No handoffs, no overnight lag, no layer between you and the people writing the code.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card reveal"><h3>Build a product</h3><p>Bring an idea or a stalled project. We scope, architect, build, and ship it.</p><div style="margin-top:16px"><a href="#contact" class="btn btn-amber">Start a project &rarr;</a></div></div>
+      <div class="card reveal" style="transition-delay:.05s"><h3>Add a dedicated team</h3><p>A senior, US-led team that plugs into yours and owns delivery end to end.</p><div style="margin-top:16px"><a href="#contact" class="btn btn-ghost">Talk to us &rarr;</a></div></div>
+      <div class="card reveal" style="transition-delay:.1s"><h3>Get an audit or advice</h3><p>Not sure what to build? A senior operator will tell you straight, including when not to build.</p><div style="margin-top:16px"><a href="#contact" class="btn btn-ghost">Get advice &rarr;</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="paper" style="text-align:center"><div class="wrap reveal" style="max-width:820px"><h2 style="font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15">We don't just build software. We engineer fast, intelligent ecosystems that grow, adapt, and win.</h2><p style="color:var(--ink-soft);font-size:1.15rem;margin-top:1.1rem">We move fast, scale smart, and replicate success. Silicon Valley architecture, bunny-fast execution.</p></div></section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow" style="color:var(--aqua)">Start a project</span>
+      <h2 style="margin-top:.5rem">Tell us what you're building.</h2>
+      <p class="sub">Send a few lines about your product or idea and we'll get back to you.</p>
+      <div class="info">
+        <div>📍 San Francisco, CA</div>
+        <div>📞 <a href="tel:4152643377">(415) 264-3377</a></div>
+        <div>✉️ <a href="mailto:sales@techbunny.ai">sales@techbunny.ai</a></div>
+      </div>
+    </div>
+    <div class="form reveal" style="transition-delay:.1s">
+      <label for="n">Name</label><input id="n" type="text" placeholder="Your name"/>
+      <label for="e">Email</label><input id="e" type="email" placeholder="you@company.com"/>
+      <label for="m">What are you building?</label><textarea id="m" rows="4" placeholder="A sentence or two is plenty."></textarea>
+      <button class="btn btn-amber" id="send" type="button">Send message →</button>
+      <p class="note">Demo form. Needs to be wired to email or a form service (e.g. Formspree) before launch.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand" style="display:flex;align-items:center;gap:.5rem"><img src="assets/logo-mark.png" alt="" style="height:36px"/>TechBunny<span style="color:var(--amber)">.ai</span></div>
+    <div style="font-weight:600">Bunnies know how to scale.</div>
+    <div>© 2025 TechBunny LLC · <a href="https://www.facebook.com/902406396282551" target="_blank" rel="noopener">Facebook</a></div>
+  </div>
+</footer>
+
+<script>
+const hdr=document.querySelector('header');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>10));
+const mb=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+mb.addEventListener('click',()=>{const o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');mb.setAttribute('aria-expanded','false')}));
+document.querySelectorAll('.q button').forEach(b=>b.addEventListener('click',()=>{
+  const q=b.parentElement,ans=b.nextElementSibling,open=q.getAttribute('aria-open')==='true';
+  q.setAttribute('aria-open',!open);b.setAttribute('aria-expanded',!open);
+  ans.style.maxHeight=open?null:ans.scrollHeight+'px';
+}));
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.getElementById('send').addEventListener('click',()=>{
+  const n=document.getElementById('n').value,e=document.getElementById('e').value,m=document.getElementById('m').value;
+  location.href=`mailto:sales@techbunny.ai?subject=Project inquiry from ${encodeURIComponent(n||'website')}&body=${encodeURIComponent(m+'\n\nFrom: '+e)}`;
+});
+</script>
+</body>
+</html>
