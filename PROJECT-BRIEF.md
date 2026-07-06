@@ -18,9 +18,8 @@ Plain, direct prose. Active voice. No filler, no buzzwords. No em dashes (use co
 - Hero centerpiece: scaling-bunnies GIF (assets/techbunny-scale.gif).
 
 ## Team bios (facts and flags)
-- Todd Johnson, Co-Founder and CEO. Co-founded and scaled rSportz; led the acquisition and $13M+ funding; grew to 3M+ athletes in 100+ countries; 2020 exit. Inc. 500 winner, built the 89th fastest-growing US company (this traces to SKM Media Group, 2013, 3,751% growth, not rSportz; framed as his personal achievement).
-- Greg Argyle, Co-Founder and CTO. Founded rSportz in 2006, CTO through 2021. Silicon Valley original who helped build the Netscape browser (Todd confirmed via Greg's LinkedIn; not independently verified by search).
-- Chak Nanga, Director of Architecture and Engineering. Salesforce, ThirdLove, Ellie Mae, IGT, Pearson, Silver Spring Networks, MySpace, AOL, Netscape. "Architected MySpace Music" rests on Todd's word (MySpace tenure is supported; the specific product is not independently verified).
+- Greg Argyle, CEO/Lead Architech, founded rSportz.com in 2006, CTO through 2021. Silicon Valley original who helped build the Netscape browser, created the first customizable enterprise browser for AOL/Time Warner, engineer for SCO Unix/Red Hat Lynix (Todd confirmed via Greg's LinkedIn; not independently verified by search).
+- Todd Johnson, CRO. Co-founded and scaled rSportz.com; led the acquisition and $13M+ funding; grew to 3M+ athletes in 100+ countries; 2020 exit. Inc. 500 winner, built the 89th fastest-growing US company (this traces to SKM Media Group, 2013, 3,751% growth, not rSportz; framed as his personal achievement).
 - Partners trained at Yale and Harvard: rests on Todd's word (not independently verified).
 - Partnership: Todd and Greg since 2006.
 
