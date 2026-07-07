@@ -78,7 +78,7 @@ header{position:sticky;top:0;z-index:50;transition:.25s}
 header.scrolled{background:rgba(220,254,254,.85);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
 .brand{display:flex;align-items:center;gap:.6rem;font-family:var(--display);font-weight:800;font-size:1.28rem}
-.brand .dot{color:var(--amber)}
+.brand .dot{color:var(--deep)}
 .brand img{height:42px;width:auto;filter:drop-shadow(0 3px 6px rgba(6,84,92,.25))}
 .navlinks{display:flex;gap:1.6rem;align-items:center}
 .navlinks a{font-weight:600;font-size:.96rem;color:var(--ink-soft);transition:color .15s}
@@ -216,7 +216,7 @@ footer a{color:#8aa0a8}footer a:hover{color:var(--aqua)}
 <body>
 <header id="top">
   <div class="wrap nav">
-    <a class="brand" href="#top"><img src="assets/logo-mark.png" alt="TechBunny.ai logo"/>TechBunny<span class="dot">.ai</span></a>
+    <a class="brand" href="#top"><img src="assets/logo-mark.png" alt="TechBunny.ai logo"/><span>TechBunny<span class="dot">.ai</span></span></a>
     <nav class="navlinks" id="nav">
       <a href="#build">What we build</a>
       <a href="#ai">AI</a>
@@ -379,7 +379,7 @@ footer a{color:#8aa0a8}footer a:hover{color:var(--aqua)}
       </div>
       <div class="card team-card reveal" style="transition-delay:.06s">
         <div class="role">CRO</div><h3>Todd Johnson</h3>
-        <p>The business engine, and an Inc. 500 winner who built the 89th fastest-growing company in America. Co-founded and scaled rSportz, leading the acquisition and $25M+ in funding that grew it to 3M+ athletes across 100+ countries before its 2020 exit. Owns strategy, growth, and client relationships.</p>
+        <p>The business engine. Co-founded and scaled rSportz, leading the acquisition and $25M+ in funding that grew it to 3M+ athletes across 100+ countries before its 2020 exit. Owns strategy, growth, and client relationships.</p>
       </div>
     </div>
   </div>
@@ -454,13 +454,15 @@ footer a{color:#8aa0a8}footer a:hover{color:var(--aqua)}
         <div>✉️ <a href="mailto:sales@techbunny.ai">sales@techbunny.ai</a></div>
       </div>
     </div>
-    <div class="form reveal" style="transition-delay:.1s">
-      <label for="n">Name</label><input id="n" type="text" placeholder="Your name"/>
-      <label for="e">Email</label><input id="e" type="email" placeholder="you@company.com"/>
-      <label for="m">What are you building?</label><textarea id="m" rows="4" placeholder="A sentence or two is plenty."></textarea>
-      <button class="btn btn-amber" id="send" type="button">Send message →</button>
-      <p class="note">Demo form. Needs to be wired to email or a form service (e.g. Formspree) before launch.</p>
-    </div>
+    <form class="form reveal" action="https://formsubmit.co/sales@techbunny.ai" method="POST" style="transition-delay:.1s">
+      <label for="n">Name</label><input id="n" name="name" type="text" placeholder="Your name" required/>
+      <label for="e">Email</label><input id="e" name="email" type="email" placeholder="you@company.com" required/>
+      <label for="m">What are you building?</label><textarea id="m" name="message" rows="4" placeholder="A sentence or two is plenty." required></textarea>
+      <input type="hidden" name="_subject" value="New project inquiry from techbunny.ai"/>
+      <input type="hidden" name="_captcha" value="false"/>
+      <input type="hidden" name="_template" value="table"/>
+      <button class="btn btn-amber" type="submit">Send message →</button>
+    </form>
   </div>
 </section>
 
@@ -474,7 +476,7 @@ footer a{color:#8aa0a8}footer a:hover{color:var(--aqua)}
       <img src="assets/hireons.png" alt="HireonsAI"/>
     </div>
     <div style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap">
-      <div class="brand" style="display:flex;align-items:center;gap:.5rem"><img src="assets/logo-mark.png" alt="" style="height:36px"/>TechBunny<span style="color:var(--amber)">.ai</span></div>
+      <div class="brand" style="display:flex;align-items:center;gap:.5rem"><img src="assets/logo-mark.png" alt="" style="height:36px"/><span>TechBunny<span style="color:var(--deep)">.ai</span></span></div>
       <div style="font-weight:600">Bunnies know how to scale.</div>
       <div>© 2026 TechBunny, Inc.</div>
     </div>
@@ -494,10 +496,6 @@ document.querySelectorAll('.q button').forEach(b=>b.addEventListener('click',()=
 }));
 const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-document.getElementById('send').addEventListener('click',()=>{
-  const n=document.getElementById('n').value,e=document.getElementById('e').value,m=document.getElementById('m').value;
-  location.href=`mailto:sales@techbunny.ai?subject=Project inquiry from ${encodeURIComponent(n||'website')}&body=${encodeURIComponent(m+'\n\nFrom: '+e)}`;
-});
 </script>
 </body>
 </html>
